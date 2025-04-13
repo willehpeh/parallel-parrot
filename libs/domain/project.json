@@ -3,7 +3,9 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/domain/src",
   "projectType": "library",
-  "tags": [],
+  "tags": [
+    "domain"
+  ],
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",
