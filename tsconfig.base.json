@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@parallel-parrot/application": ["libs/application/src/index.ts"],
+      "@parallel-parrot/domain": ["libs/domain/src/index.ts"],
+      "@parallel-parrot/infrastructure": ["libs/infrastructure/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
