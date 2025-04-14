@@ -1,11 +1,11 @@
-import { Household, HouseholdId, HouseholdRepository } from '@parallel-parrot/domain';
+import { Household, HouseholdRepository } from '@parallel-parrot/domain';
 
 export class InMemoryHouseholdRepository implements HouseholdRepository {
 
   households: Household[] = [];
 
-  async save(household: Household): Promise<HouseholdId> {
+  async save(household: Household): Promise<void> {
     this.households.push(household);
-    return Promise.resolve(new HouseholdId());
+    return Promise.resolve();
   }
 }

@@ -10,6 +10,7 @@ export class CreateHouseholdCommandHandler implements ICommandHandler<CreateHous
   async execute(command: CreateHouseholdCommand): Promise<HouseholdId> {
     const householdId = new HouseholdId(command.id);
     const household = Household.create({ id: householdId });
-    return this.repository.save(household);
+    await this.repository.save(household);
+    return householdId;
   }
 }

@@ -2,6 +2,7 @@ import { CreateHouseholdCommand } from './create-household.command';
 import { CreateHouseholdCommandHandler } from './create-household.command-handler';
 import { InMemoryHouseholdRepository } from '../fixtures/in-memory.household.repository';
 import { CreateHouseholdDto } from './create-household.dto';
+import { HouseholdId } from '@parallel-parrot/domain';
 
 describe('Create Household', () => {
   let command: CreateHouseholdCommand;
@@ -9,16 +10,21 @@ describe('Create Household', () => {
   let repository: InMemoryHouseholdRepository;
   let dto: CreateHouseholdDto;
 
-  beforeEach(async () => {
+  beforeEach(() => {
     dto = { id: '123' };
     command = new CreateHouseholdCommand(dto);
     repository = new InMemoryHouseholdRepository();
     handler = new CreateHouseholdCommandHandler(repository);
-
-    await handler.execute(command);
   });
 
   it('should create a household with the right ID', async () => {
-    expect(repository.households[0].snapshot()).toMatchObject({ id: '123' });
+    await handler.execute(command);
+    expect(repository.households[0].snapshot()).toMatchObject({ id: dto.id });
+  });
+
+  it('should return the Household ID of the created household', async () => {
+    const id = await handler.execute(command);
+    expect(id).toBeInstanceOf(HouseholdId);
+    expect(id.value()).toEqual(dto.id);
   });
 });
