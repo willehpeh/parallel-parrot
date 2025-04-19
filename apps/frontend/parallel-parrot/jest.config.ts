@@ -1,8 +1,8 @@
 export default {
   displayName: 'parallel-parrot',
-  preset: '../../jest.preset.js',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/parallel-parrot',
+  coverageDirectory: '../../../coverage/apps/frontend/parallel-parrot',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

@@ -1,32 +1,38 @@
 {
   "name": "parallel-parrot",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/parallel-parrot/src",
+  "sourceRoot": "apps/frontend/parallel-parrot/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
-        "outputPath": "dist/apps/parallel-parrot",
-        "index": "apps/parallel-parrot/src/index.html",
-        "browser": "apps/parallel-parrot/src/main.ts",
-        "polyfills": ["zone.js"],
-        "tsConfig": "apps/parallel-parrot/tsconfig.app.json",
+        "outputPath": "dist/apps/frontend/parallel-parrot",
+        "index": "apps/frontend/parallel-parrot/src/index.html",
+        "browser": "apps/frontend/parallel-parrot/src/main.ts",
+        "polyfills": [
+          "zone.js"
+        ],
+        "tsConfig": "apps/frontend/parallel-parrot/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/parallel-parrot/public"
+            "input": "apps/frontend/parallel-parrot/public"
           }
         ],
-        "styles": ["apps/parallel-parrot/src/styles.scss"],
+        "styles": [
+          "apps/frontend/parallel-parrot/src/styles.scss"
+        ],
         "scripts": [],
-        "server": "apps/parallel-parrot/src/main.server.ts",
+        "server": "apps/frontend/parallel-parrot/src/main.server.ts",
         "ssr": {
-          "entry": "apps/parallel-parrot/src/server.ts"
+          "entry": "apps/frontend/parallel-parrot/src/server.ts"
         },
         "prerender": true
       },
@@ -77,9 +83,11 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
-        "jestConfig": "apps/parallel-parrot/jest.config.ts"
+        "jestConfig": "apps/frontend/parallel-parrot/jest.config.ts"
       }
     },
     "serve-static": {
@@ -87,7 +95,7 @@
       "options": {
         "buildTarget": "parallel-parrot:build",
         "port": 4200,
-        "staticFilePath": "dist/apps/parallel-parrot/browser",
+        "staticFilePath": "dist/apps/frontend/parallel-parrot/browser",
         "spa": true
       }
     }
