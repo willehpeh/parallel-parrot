@@ -4,6 +4,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 RUN npx nx build parallel-parrot-api
+RUN npx nx reset
 RUN npx nx build parallel-parrot
 FROM node:20.15.0-alpine as runner
 COPY --from=builder /app/dist/apps/backend/parallel-parrot-api ./
