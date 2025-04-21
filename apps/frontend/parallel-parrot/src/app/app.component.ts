@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
 
 @Component({
-  imports: [RouterModule],
+  imports: [],
   selector: 'app-root',
-  template: `<router-outlet/>`,
+  template: `
+    <h1>Parallel Parrot</h1>
+  `,
 })
 export class AppComponent {}
