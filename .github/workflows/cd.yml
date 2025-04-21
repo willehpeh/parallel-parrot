@@ -1,0 +1,15 @@
+name: CD
+on:
+  workflow_run:
+    workflows:
+      - CI
+    types:
+      - completed
+jobs:
+  cd:
+    runs-on: ubuntu-22.04
+    uses: johannes-huther/webhook.sh@v1.0.0
+    with:
+      webhook_url: http://109.221.172.37:8000/webhooks/source/github/events/manual
+      webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
+      webhook_type: json
