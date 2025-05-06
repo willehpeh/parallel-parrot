@@ -1,0 +1,11 @@
+{
+  "name": "infrastructure",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/parallel-parrot/infrastructure/src",
+  "projectType": "library",
+  "tags": [
+    "parallel-parrot/infrastructure"
+  ],
+  "// targets": "to see all targets run: nx show project infrastructure --web",
+  "targets": {}
+}
