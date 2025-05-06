@@ -1,1 +1,4 @@
-export * from './lib/domain';
+export * from './aggregates';
+export * from './repositories';
+
+
