@@ -15,7 +15,9 @@ describe('Making an appointment', () => {
   beforeEach(() => {
     appointments = new InMemoryAppointmentRepository();
     handler = new MakeAppointmentCommandHandler(appointments);
-    dto = {};
+    dto = {
+      studentId: 'studentId',
+    };
     command = new MakeAppointmentCommand(dto);
   });
 
