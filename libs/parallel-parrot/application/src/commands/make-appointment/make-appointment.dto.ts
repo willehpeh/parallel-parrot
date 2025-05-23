@@ -1,3 +1,7 @@
 export type MakeAppointmentDto = {
-  studentId: string;
+  patientId: string;
+  clinicianId: string;
+  date: string;
+  time: string;
+  reasonId: string;
 }
