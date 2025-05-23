@@ -1,4 +1,4 @@
-import { ValueObject } from '../contracts';
+import { ValueObject } from '../../contracts';
 
 export class AppointmentDate implements ValueObject<string> {
 

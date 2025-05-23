@@ -1,4 +1,4 @@
-import { ValueObject } from '../contracts';
+import { ValueObject } from '../../contracts';
 
 export class AppointmentTime implements ValueObject<string> {
   private readonly hour: number;
